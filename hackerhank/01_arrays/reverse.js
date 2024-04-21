@@ -19,9 +19,3 @@ Space:
 const reverse = (str) => {
   return str.split('').reverse().join('');
 };
-
-console.log(reverse("eugenio"));
-
-const obj = { 1: "eugenio" }
-
-console.log( "eugenio" in obj)
