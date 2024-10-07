@@ -4,6 +4,10 @@
  */
 
 /* 
+Approach: Bucket sort
+*/
+
+/* 
 Time: O(m*n)
 Space: O(m)
 */

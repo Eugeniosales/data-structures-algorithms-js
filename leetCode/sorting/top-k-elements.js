@@ -3,7 +3,9 @@
  * @param {number} k
  * @return {number[]}
  */
-
+/* 
+Approach: Sorting
+*/
 // O(n log n)
 var topKFrequent = function (nums, k) {
   const map = {};
