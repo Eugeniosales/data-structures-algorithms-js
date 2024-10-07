@@ -3,6 +3,8 @@
  * @param {number} k
  * @return {number[]}
  */
+
+// O(n log n)
 var topKFrequent = function (nums, k) {
   const map = {};
   // O(n)
