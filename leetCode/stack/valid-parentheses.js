@@ -2,23 +2,34 @@
  * @param {string} s
  * @return {boolean}
  */
+/* 
+    Approach - Stack
+    Time: O(n); 
+    Space: O(n);
+    Steps
+        .initialize map with correspoding brakets
+        .Loop throught the string and add open bracket to the stack
+        .When closed bracket shows up
+            .Check if the top element in queue is the correspoing bracket
+                .If so, pop queue and keep moving
+                .Otherwise, return false
+        .return true
+*/
 var isValid = function(s) {
-  const stack = [];
-  const closedBracket = {
-    ")": "(",
-    "]": "[",
-    "}": "{"
+  const bracket = {
+      ")": "(",
+      "}": "{",
+      "]": "["
   };
 
-  for(const word of s) {
-    if(word in closedBracket) {
-      let openedBracked = stack.pop();
-      if(openedBracked !== closedBracket[word]) {
-          return false;
+  let stack = [];
+
+  for(const c of s) {
+      if(!(c in bracket)) stack.push(c);
+      if(c in bracket) {
+          const top = stack.pop();
+          if(bracket[c] !== top) return false;
       }
-    } else {
-      stack.push(word);
-    }
   }
-  return stack.length === 0;
+  return !stack.length;
 };
